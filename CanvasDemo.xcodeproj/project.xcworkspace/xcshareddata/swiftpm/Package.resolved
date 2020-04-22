@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Canvas",
+        "repositoryURL": "https://github.com/scchn/canvas",
+        "state": {
+          "branch": "master",
+          "revision": "544cbb75d0df6b7a272f422cc9f1daa5fb6134ee",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

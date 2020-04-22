@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CanvasDemo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xbS-LB-A41">
+                                <rect key="frame" x="0.0" y="52" width="414" height="802"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-Pt-LfJ" customClass="CanvasView" customModule="Canvas">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pHo-N8-fya">
+                                        <rect key="frame" x="0.0" y="779" width="414" height="23"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-WD-pwy">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="23"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" image="arrow.uturn.left" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="undo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EtG-hw-fOc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSG-rh-uBE">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="23"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <state key="normal" image="arrow.uturn.right" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="redo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xeg-nc-V4S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xbS-LB-A41" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="274-J4-YNc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xbS-LB-A41" secondAttribute="trailing" id="EKW-Jx-FN3"/>
+                            <constraint firstItem="xbS-LB-A41" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="ffv-9P-yQo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xbS-LB-A41" secondAttribute="bottom" constant="8" id="fvc-EV-fZj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="canvasView" destination="FjT-Pt-LfJ" id="I0H-DY-ieO"/>
+                        <outlet property="redoButton" destination="vSG-rh-uBE" id="wrh-ni-PIf"/>
+                        <outlet property="undoButton" destination="aLf-WD-pwy" id="6Xy-f0-fUp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.uturn.left" catalog="system" width="128" height="112"/>
+        <image name="arrow.uturn.right" catalog="system" width="128" height="112"/>
+    </resources>
+</document>
