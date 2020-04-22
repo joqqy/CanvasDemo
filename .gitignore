@@ -96,7 +96,7 @@ Dependencies/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-CanvasDemo(NoSPM).xcodeproj
+_CanvasDemo.xcodeproj
 
 # End of https://www.gitignore.io/api/xcode,macos,swift
 

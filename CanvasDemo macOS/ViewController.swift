@@ -18,7 +18,7 @@ enum Shape: String, CaseIterable {
     case pencil2
     case arc
     
-    func draweType() -> BaseDrawer.Type {
+    func canvasItemType() -> CanvasItem.Type {
         switch self {
         case .line:     return LineItem.self
         case .polyline: return PolylineItem.self
@@ -55,15 +55,12 @@ class ViewController: NSViewController {
     
     func setUpObservers() {
         let notCenter = NotificationCenter.default
-        
         notCenter.addObserver(forName: .canvasViewDidChangeSelection, object: nil, queue: .main) { _ in
             self.updateUI()
         }
-        
         notCenter.addObserver(forName: .canvasViewDidEndSession, object: nil, queue: .main) { _ in
             self.updateUI()
         }
-        
         notCenter.addObserver(forName: .canvasViewDidCancelSession, object: nil, queue: .main) { _ in
             self.updateUI()
         }
@@ -78,7 +75,7 @@ class ViewController: NSViewController {
     @objc func doubleClicked(_ tableView: NSTableView) {
         if tableView.selectedRow != -1 {
             let shape = Shape.allCases[tableView.selectedRow]
-            canvasView.beginDrawingSession(type: shape.draweType())
+            canvasView.beginDrawingSession(type: shape.canvasItemType())
         }
     }
     

@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func registerUndoAdd(item: BaseDrawer) {
+    func registerUndoAdd(item: CanvasItem) {
         undoManager?.registerUndo(withTarget: self) { vc in
             if let idx = vc.canvasView.items.firstIndex(of: item) {
                 vc.canvasView.removeItems(at: [idx])
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func registerUndoRemove(_ item: BaseDrawer) {
+    func registerUndoRemove(_ item: CanvasItem) {
         undoManager?.registerUndo(withTarget: self) { vc in
             vc.canvasView.addItem(item)
             vc.registerUndoAdd(item: item)
