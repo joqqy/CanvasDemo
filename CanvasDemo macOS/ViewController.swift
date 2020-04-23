@@ -17,6 +17,7 @@ enum Shape: String, CaseIterable {
     case pencil
     case pencil2
     case arc
+    case cirdist
     
     func canvasItemType() -> CanvasItem.Type {
         switch self {
@@ -26,6 +27,7 @@ enum Shape: String, CaseIterable {
         case .pencil:   return PencilItem.self
         case .pencil2:  return PencilItem2.self
         case .arc:      return ArcItem.self
+        case .cirdist:  return CircleDistItem.self
         }
     }
 }
@@ -36,12 +38,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var cursorButton: NSButton!
     @IBOutlet weak var deleteButton: NSButton!
     @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var undoButton: NSButton!
+    @IBOutlet weak var redoButton: NSButton!
     
     var selectedRow: Int? { tableView.selectedRow == -1 ? nil : tableView.selectedRow}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpTableView()
         setUpObservers()
         updateUI()
@@ -55,19 +58,27 @@ class ViewController: NSViewController {
     
     func setUpObservers() {
         let notCenter = NotificationCenter.default
-        notCenter.addObserver(forName: .canvasViewDidChangeSelection, object: nil, queue: .main) { _ in
-            self.updateUI()
-        }
         notCenter.addObserver(forName: .canvasViewDidEndSession, object: nil, queue: .main) { _ in
             self.updateUI()
         }
         notCenter.addObserver(forName: .canvasViewDidCancelSession, object: nil, queue: .main) { _ in
             self.updateUI()
         }
+        notCenter.addObserver(forName: .canvasViewDidDragItems, object: nil, queue: .main) { _ in
+            self.updateUI()
+        }
+        notCenter.addObserver(forName: .canvasViewDidEditItem, object: nil, queue: .main) { _ in
+            self.updateUI()
+        }
+        notCenter.addObserver(forName: .canvasViewDidChangeSelection, object: nil, queue: .main) { _ in
+            self.updateUI()
+        }
     }
     
     func updateUI() {
         deleteButton.isEnabled = !canvasView.indicesOfSelectedItems.isEmpty
+        undoButton.isEnabled = undoManager?.canUndo ?? false
+        redoButton.isEnabled = undoManager?.canRedo ?? false
     }
     
     // MARK: - Actions
@@ -85,6 +96,16 @@ class ViewController: NSViewController {
     
     @IBAction func removeSelection(_ sender: Any) {
         canvasView.removeItems(at: canvasView.indicesOfSelectedItems)
+    }
+    
+    @IBAction func undo(_ sender: Any) {
+        undoManager?.undo()
+        updateUI()
+    }
+    
+    @IBAction func redo(_ sender: Any) {
+        undoManager?.redo()
+        updateUI()
     }
     
 }

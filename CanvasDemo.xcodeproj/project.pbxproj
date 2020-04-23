@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		858A62E32451729B0038B24F /* CircleDistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A62E22451729B0038B24F /* CircleDistItem.swift */; };
+		858A62E8245173DE0038B24F /* Canvas in Frameworks */ = {isa = PBXBuildFile; productRef = 858A62E7245173DE0038B24F /* Canvas */; };
+		858A62EA245173EA0038B24F /* Canvas in Frameworks */ = {isa = PBXBuildFile; productRef = 858A62E9245173EA0038B24F /* Canvas */; };
+		858A630C245176AA0038B24F /* CircleDistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A62E22451729B0038B24F /* CircleDistItem.swift */; };
 		85F4EC332446D72400CFFCE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F4EC322446D72400CFFCE1 /* AppDelegate.swift */; };
 		85F4EC352446D72400CFFCE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F4EC342446D72400CFFCE1 /* ViewController.swift */; };
 		85F4EC372446D72500CFFCE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F4EC362446D72500CFFCE1 /* Assets.xcassets */; };
@@ -17,7 +21,6 @@
 		85F4EC4E2446D73200CFFCE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F4EC4C2446D73200CFFCE1 /* Main.storyboard */; };
 		85F4EC502446D73200CFFCE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F4EC4F2446D73200CFFCE1 /* Assets.xcassets */; };
 		85F4EC532446D73200CFFCE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F4EC512446D73200CFFCE1 /* LaunchScreen.storyboard */; };
-		85F6B2C72450563D0087CFFA /* Canvas in Frameworks */ = {isa = PBXBuildFile; productRef = 85F6B2C62450563D0087CFFA /* Canvas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		858A62E22451729B0038B24F /* CircleDistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDistItem.swift; sourceTree = "<group>"; };
 		85F4EC302446D72400CFFCE1 /* CanvasDemo macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CanvasDemo macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F4EC322446D72400CFFCE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F4EC342446D72400CFFCE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F6B2C72450563D0087CFFA /* Canvas in Frameworks */,
+				858A62E8245173DE0038B24F /* Canvas in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858A62EA245173EA0038B24F /* Canvas in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,7 @@
 			children = (
 				85F4EC322446D72400CFFCE1 /* AppDelegate.swift */,
 				85F4EC342446D72400CFFCE1 /* ViewController.swift */,
+				858A62E22451729B0038B24F /* CircleDistItem.swift */,
 				85F4EC362446D72500CFFCE1 /* Assets.xcassets */,
 				85F4EC382446D72500CFFCE1 /* Main.storyboard */,
 				85F4EC3B2446D72500CFFCE1 /* Info.plist */,
@@ -151,7 +157,7 @@
 			);
 			name = "CanvasDemo macOS";
 			packageProductDependencies = (
-				85F6B2C62450563D0087CFFA /* Canvas */,
+				858A62E7245173DE0038B24F /* Canvas */,
 			);
 			productName = "CanvasDemo macOS";
 			productReference = 85F4EC302446D72400CFFCE1 /* CanvasDemo macOS.app */;
@@ -171,6 +177,9 @@
 			dependencies = (
 			);
 			name = "CanvasDemo iOS";
+			packageProductDependencies = (
+				858A62E9245173EA0038B24F /* Canvas */,
+			);
 			productName = "CanvasDemo iOS";
 			productReference = 85F4EC442446D73200CFFCE1 /* CanvasDemo iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -203,7 +212,7 @@
 			);
 			mainGroup = 85F4EC052446D6B200CFFCE1;
 			packageReferences = (
-				85F6B2C52450563D0087CFFA /* XCRemoteSwiftPackageReference "canvas" */,
+				858A62E6245173DE0038B24F /* XCRemoteSwiftPackageReference "canvas" */,
 			);
 			productRefGroup = 85F4EC0F2446D6B200CFFCE1 /* Products */;
 			projectDirPath = "";
@@ -242,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858A62E32451729B0038B24F /* CircleDistItem.swift in Sources */,
 				85F4EC352446D72400CFFCE1 /* ViewController.swift in Sources */,
 				85F4EC332446D72400CFFCE1 /* AppDelegate.swift in Sources */,
 			);
@@ -251,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858A630C245176AA0038B24F /* CircleDistItem.swift in Sources */,
 				85F4EC4B2446D73200CFFCE1 /* ViewController.swift in Sources */,
 				85F4EC472446D73200CFFCE1 /* AppDelegate.swift in Sources */,
 				85F4EC492446D73200CFFCE1 /* SceneDelegate.swift in Sources */,
@@ -514,7 +525,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		85F6B2C52450563D0087CFFA /* XCRemoteSwiftPackageReference "canvas" */ = {
+		858A62E6245173DE0038B24F /* XCRemoteSwiftPackageReference "canvas" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scchn/canvas";
 			requirement = {
@@ -525,9 +536,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		85F6B2C62450563D0087CFFA /* Canvas */ = {
+		858A62E7245173DE0038B24F /* Canvas */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 85F6B2C52450563D0087CFFA /* XCRemoteSwiftPackageReference "canvas" */;
+			package = 858A62E6245173DE0038B24F /* XCRemoteSwiftPackageReference "canvas" */;
+			productName = Canvas;
+		};
+		858A62E9245173EA0038B24F /* Canvas */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 858A62E6245173DE0038B24F /* XCRemoteSwiftPackageReference "canvas" */;
 			productName = Canvas;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -787,7 +787,7 @@
                                         <rect key="frame" x="101" y="0.0" width="332" height="377"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDw-EE-9ei">
-                                                <rect key="frame" x="0.0" y="333" width="72" height="44"/>
+                                                <rect key="frame" x="0.0" y="333" width="144" height="44"/>
                                                 <subviews>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="kQX-EK-pxv">
                                                         <rect key="frame" x="8" y="8" width="28" height="28"/>
@@ -823,6 +823,38 @@ CA
                                                             <action selector="removeSelection:" target="XfG-lQ-9wD" id="Mwf-Kb-J1O"/>
                                                         </connections>
                                                     </button>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="ibe-4X-wdH">
+                                                        <rect key="frame" x="80" y="8" width="28" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ibe-4X-wdH" secondAttribute="height" multiplier="1:1" id="8SA-CV-6xr"/>
+                                                            <constraint firstAttribute="height" constant="28" id="tsR-cD-llt"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Undo" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="LqB-ms-boC">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                            <string key="keyEquivalent">z</string>
+                                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="undo:" target="XfG-lQ-9wD" id="Llj-aU-Ewb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="w0p-0e-v3d">
+                                                        <rect key="frame" x="116" y="8" width="28" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="w0p-0e-v3d" secondAttribute="height" multiplier="1:1" id="oPQ-hY-wyV"/>
+                                                            <constraint firstAttribute="height" constant="28" id="r9r-nq-L68"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Redo" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="OOe-hO-xfw">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                            <string key="keyEquivalent">Z</string>
+                                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="redo:" target="XfG-lQ-9wD" id="QFV-8X-ffn"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <edgeInsets key="edgeInsets" left="8" right="0.0" top="0.0" bottom="0.0"/>
                                                 <constraints>
@@ -831,8 +863,12 @@ CA
                                                 <visibilityPriorities>
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
                                                 </visibilityPriorities>
                                                 <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
@@ -842,6 +878,9 @@ CA
                                             </box>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZDW-Cu-YMx" customClass="CanvasView" customModule="Canvas">
                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="332"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ZDW-Cu-YMx" secondAttribute="height" multiplier="1:1" id="BE5-Rn-jJm"/>
+                                                </constraints>
                                             </customView>
                                         </subviews>
                                         <visibilityPriorities>
@@ -857,6 +896,7 @@ CA
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="m5x-xD-D02" firstAttribute="top" secondItem="64q-SJ-doU" secondAttribute="top" id="B58-Si-gds"/>
                                     <constraint firstAttribute="bottom" secondItem="m5x-xD-D02" secondAttribute="bottom" id="k4g-s3-XNh"/>
                                 </constraints>
                                 <visibilityPriorities>
@@ -882,7 +922,9 @@ CA
                         <outlet property="canvasView" destination="ZDW-Cu-YMx" id="Eq2-G4-261"/>
                         <outlet property="cursorButton" destination="kQX-EK-pxv" id="20O-8g-gKJ"/>
                         <outlet property="deleteButton" destination="hAh-7h-bYE" id="AuG-pM-r4N"/>
+                        <outlet property="redoButton" destination="w0p-0e-v3d" id="aOk-LA-l4O"/>
                         <outlet property="tableView" destination="LUD-7e-Ozj" id="b3Z-rG-hA3"/>
+                        <outlet property="undoButton" destination="ibe-4X-wdH" id="1O4-4U-Blb"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -893,5 +935,7 @@ CA
     <resources>
         <image name="Cursor" width="50" height="50"/>
         <image name="Delete" width="50" height="50"/>
+        <image name="Redo" width="50" height="50"/>
+        <image name="Undo" width="50" height="50"/>
     </resources>
 </document>
